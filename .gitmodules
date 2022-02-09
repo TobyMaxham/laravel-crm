@@ -1,0 +1,3 @@
+[submodule "volt"]
+	path = volt
+	url = git@github.com:themesberg/volt-bootstrap-5-dashboard.git
