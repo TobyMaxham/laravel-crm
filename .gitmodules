@@ -1,5 +1,5 @@
 [submodule "volt"]
-	path = volt
+	path = subs/volt-bootstrap-5-dashboard
 	url = git@github.com:themesberg/volt-bootstrap-5-dashboard.git
 [submodule "subs/portal-theme-bs5"]
 	path = subs/portal-theme-bs5
