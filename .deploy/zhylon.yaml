@@ -1,0 +1,30 @@
+config:
+  application: 'Laravel CRM'
+  repository: '$self'
+  branch: main
+  check: disabled
+  php_fpm_version: '8.1'
+  php_cli_version: '8.1'
+
+cron:
+  scheduler:
+    type: laravel
+    frequency: every-minute
+    task: schedule:run
+
+hosts:
+  production:
+    remote_user: default
+    environment: production
+    debug: false
+    automation: false # prevent from running the deployment script on git push
+    hostname: 'laravel-crm.awesomeapp.de'
+    deploy_path: '~/{{hostname}}'
+
+tasks:
+  deploy:
+    - artisan:view:cache
+    - artisan:config:cache
+    - artisan:cache:clear
+    - artisan:migrate
+    - php-fpm:reload
