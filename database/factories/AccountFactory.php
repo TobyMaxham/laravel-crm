@@ -20,7 +20,7 @@ class AccountFactory extends Factory
             'name' => $this->faker->company,
 
             'email' => $this->faker->email,
-            'office_phone' => $this->faker->phoneNumber,
+            'office_phone' => $this->faker->e164PhoneNumber,
 
             'user_id' => function () {
                 return rand(0, 1) ? UserFactory::new()->create()->id : null;
